@@ -65,10 +65,12 @@ def train_model(path : str = 'Model', save : bool = False):
 
     #模型评分
     print('模型准确率-->', accuracy_score(y_test, y_predict))
-    #准确率，召回率，F1_Score
+    #准确率，召回率，F1_Score，roc_auc评分，分类报告
     print('precision_score-->', precision_score(y_test, y_predict, pos_label = 4))
     print('recall_score-->', recall_score(y_test, y_predict, pos_label = 4))
     print('f1_score-->', f1_score(y_test, y_predict, pos_label = 4))
+    print('roc_auc_score-->', roc_auc_score(y_test, y_predict))
+    print('classification_report-->\n', classification_report(y_test, y_predict))
 
 
     #模型导出
