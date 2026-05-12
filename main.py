@@ -11,6 +11,10 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import accuracy_score
 #数据划分包
 from sklearn.model_selection import train_test_split
+#模型准确率评分
+from sklearn.metrics import precision_score
+from sklearn.metrics import recall_score
+from sklearn.metrics import f1_score
 #导出模型
 import joblib
 
@@ -61,6 +65,10 @@ def train_model(path : str = 'Model', save : bool = False):
 
     #模型评分
     print('模型准确率-->', accuracy_score(y_test, y_predict))
+    #准确率，召回率，F1_Score
+    print('precision_score-->', precision_score(y_test, y_predict, pos_label = 4))
+    print('recall_score-->', recall_score(y_test, y_predict, pos_label = 4))
+    print('f1_score-->', f1_score(y_test, y_predict, pos_label = 4))
 
 
     #模型导出
