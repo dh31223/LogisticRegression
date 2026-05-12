@@ -38,7 +38,7 @@ def train_model(path : str = 'Model', save : bool = False):
     data.dropna(inplace = True)
 
     #确定特征值和标签
-    x = data.iloc[:, :-1]
+    x = data.iloc[:, 1:-1]
     y = data['Class']
 
     #数据划分
